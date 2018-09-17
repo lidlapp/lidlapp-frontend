@@ -3,6 +3,6 @@ export class Courier {
     id: number;
     nickname: string;
     eta: Date;
-    store: Store;
-    collectionPoint: string;
+    storeId: number;
+    pickUpLocation: string;
 }

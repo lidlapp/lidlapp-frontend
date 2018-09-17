@@ -1,0 +1,6 @@
+<ul class="courier-overview">
+  <li *ngFor="let courier of couriers | async">
+    Nickname: {{ courier.nickname }}<br>
+    Pick up: {{ courier.pickUpLocation }}
+  </li>
+</ul>
