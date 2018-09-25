@@ -1,6 +1,10 @@
 <h1>Account Details</h1>
 <form #heroForm="ngForm" (ngSubmit)="onSubmit()">
   <label>
+    Email
+    <input [(ngModel)]="model.email" name="email" disabled>
+  </label>
+  <label>
     Nickname
     <input [(ngModel)]="model.nickname" name="nickname">
   </label>

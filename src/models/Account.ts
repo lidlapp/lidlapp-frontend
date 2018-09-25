@@ -1,5 +1,6 @@
 export class Account {
-    nickname: string;
-    name: string;
-    iban: string;
+  email: string;
+  nickname: string;
+  name: string;
+  iban: string;
 }
