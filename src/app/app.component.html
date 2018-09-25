@@ -1,6 +1,4 @@
-<h2>Hello World</h2>
-
-<div>
+<nav>
   <h1 *ngIf="name">
     Hallo, {{name}}
   </h1>
@@ -11,8 +9,9 @@
   <button class="btn btn-default" (click)="logoff()">
     Logout
   </button>
-</div>
 
-<app-courier-overview></app-courier-overview>
+  <a href="/#/dashboard">Dashboard</a>
+  <a href="/#/account">Account Details</a>
+</nav>
 
 <router-outlet></router-outlet>

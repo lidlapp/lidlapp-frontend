@@ -7,11 +7,13 @@ import { CourierOverviewComponent } from './courier-overview/courier-overview.co
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { AuthInterceptor } from './auth/auth-interceptor';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourierOverviewComponent
+    CourierOverviewComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
