@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Account } from '../../models/Account';
+import { HttpClient } from '@angular/common/http';
+import { retry } from 'rxjs/operators';
 
 @Component({
   selector: 'app-account',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountComponent implements OnInit {
 
-  constructor() { }
+  model: Account = new Account();
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.http.get<Account>('/account').pipe(
+      retry(3),
+    ).subscribe(a => this.model = a);
   }
 
+  onSubmit() {
+    console.log('submit', this.model);
+  }
 }
