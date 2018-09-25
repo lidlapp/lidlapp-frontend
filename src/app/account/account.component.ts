@@ -22,5 +22,7 @@ export class AccountComponent implements OnInit {
 
   onSubmit() {
     console.log('submit', this.model);
+    this.http.put<Account>('/account', this.model)
+      .subscribe(a => this.model = a);
   }
 }

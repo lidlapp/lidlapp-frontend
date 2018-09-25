@@ -23,8 +23,8 @@ export class AppComponent {
   }
 
   public get name() {
-    let claims: any = this.oauthService.getIdentityClaims();
-    if (!claims) return null;
+    const claims: any = this.oauthService.getIdentityClaims();
+    if (!claims) { return null; }
     return claims.given_name;
   }
 }
