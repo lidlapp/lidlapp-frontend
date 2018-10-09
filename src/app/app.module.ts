@@ -8,12 +8,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { AccountComponent } from './account/account.component';
+import { EnterOrderComponent } from './enter-order/enter-order.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CourierOverviewComponent,
-    AccountComponent
+    AccountComponent,
+    EnterOrderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,28 @@
-<ul class="courier-overview">
-  <li *ngFor="let courier of couriers | async">
-    Nickname: {{ courier.nickname }}<br>
-    Pick up: {{ courier.pickUpLocation }}
-  </li>
-</ul>
+<div>
+  <table>
+    <tr>
+      <th>
+        Nickname
+      </th>
+      <th>
+        Location
+      </th>
+      <th>
+        Store
+      </th>
+      <th>
+        ETA
+      </th>
+    </tr>
+    <tr *ngFor="let courier of couriers | async">
+      <td>{{ courier.nickname }}</td>
+      <td>{{ courier.pickUpLocation }}</td>
+      <td>{{ courier.store.chain.name }}</td>
+      <td>{{ courier.eta | date:'shortTime' }}</td>
+      <td><button (click)="chooseCourier(courier)">Choose courier</button></td>
+    </tr>
+  </table>
+</div>
+<div>
+  <button type="button">Become a courier!</button>
+</div>
