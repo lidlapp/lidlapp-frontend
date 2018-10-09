@@ -1,14 +1,14 @@
 pipeline {
   agent {
     docker {
-      image 'node:9-alpine'
+      image 'node:10-alpine'
       args '-p 4200:4200 -v /srv/lidlapp:/srv/lidlapp'
     }
   }
   stages {
     stage('NPM install') {
       steps {
-        sh 'npm install'
+        sh 'sudo npm install'
       }
     }
     stage('Build') {
