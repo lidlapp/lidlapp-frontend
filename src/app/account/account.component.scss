@@ -1,0 +1,13 @@
+form {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+
+  label {
+    margin: 0.6rem 0;
+  }
+
+  input {
+    display: block;
+  }
+}

@@ -1,0 +1,9 @@
+nav {
+  background: #aaa;
+  display: flex;
+  flex-flow: row;
+  align-items: baseline;
+}
+nav > * {
+  margin: 1rem;
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, interval } from 'rxjs';
+import { Observable, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { Courier } from '../../models/Courier';
 
@@ -16,8 +16,8 @@ export class CourierOverviewComponent implements OnInit {
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
-    this.couriers = interval(5000).pipe(
-      switchMap(_ => this.httpClient.get<Courier[]>('//localhost:9090/api/courier'))
+    this.couriers = timer(0, 5000).pipe(
+      switchMap(_ => this.httpClient.get<Courier[]>('/courier'))
     );
   }
 }

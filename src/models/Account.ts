@@ -1,6 +1,6 @@
 export class Account {
-    nickname: string;
-    password: string;
-    name: string;
-    iban: string;
+  email: string;
+  nickname: string;
+  name: string;
+  iban: string;
 }

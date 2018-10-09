@@ -1,0 +1,22 @@
+<h1>Account Details</h1>
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+  <label>
+    Email
+    <input [(ngModel)]="model.email" name="email" disabled>
+  </label>
+  <label>
+    Nickname
+    <input [(ngModel)]="model.nickname" name="nickname">
+  </label>
+  <label>
+    Real Name
+    <input [(ngModel)]="model.name" name="name">
+  </label>
+  <label>
+    IBAN
+    <input [(ngModel)]="model.iban" name="iban">
+  </label>
+  <button type="submit">
+    Edit
+  </button>
+</form>
