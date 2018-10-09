@@ -2,7 +2,7 @@ import { Store } from './Store';
 export class Courier {
     id: number;
     nickname: string;
-    eta: Date;
+    eta: string;
     store: Store;
     pickUpLocation: string;
 }

@@ -9,13 +9,15 @@ import { OAuthModule } from 'angular-oauth2-oidc';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { AccountComponent } from './account/account.component';
 import { EnterOrderComponent } from './enter-order/enter-order.component';
+import { CourierSignupComponent } from './courier-signup/courier-signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CourierOverviewComponent,
     AccountComponent,
-    EnterOrderComponent
+    EnterOrderComponent,
+    CourierSignupComponent
   ],
   imports: [
     BrowserModule,
