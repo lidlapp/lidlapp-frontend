@@ -1,5 +1,6 @@
 
 FROM node:10-alpine
+USER node
 
 VOLUME /srv/lidlapp /srv/lidlapp
 
