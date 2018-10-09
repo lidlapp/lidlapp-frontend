@@ -17,7 +17,7 @@
     <tr *ngFor="let courier of couriers | async">
       <td>{{ courier.nickname }}</td>
       <td>{{ courier.pickUpLocation }}</td>
-      <td>{{ courier.store.chain.name }}</td>
+      <td>{{ courier.store }}</td>
       <td>{{ courier.eta | date:'shortTime' }}</td>
       <td><button (click)="chooseCourier(courier)">Choose courier</button></td>
     </tr>

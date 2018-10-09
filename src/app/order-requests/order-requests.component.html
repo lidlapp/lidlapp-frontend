@@ -1,0 +1,14 @@
+<table>
+    <tr>
+      <th>
+        Consumer
+      </th>
+      <th>
+        Producten
+      </th>
+    </tr>
+    <tr *ngFor="let orderItem of orderItems | async">
+      <td>{{ orderItem.consumer.email }}</td>
+      <td>{{ orderItem.product }}</td>
+    </tr>
+  </table>

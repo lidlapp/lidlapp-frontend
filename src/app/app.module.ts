@@ -10,6 +10,7 @@ import { AuthInterceptor } from './auth/auth-interceptor';
 import { AccountComponent } from './account/account.component';
 import { EnterOrderComponent } from './enter-order/enter-order.component';
 import { CourierSignupComponent } from './courier-signup/courier-signup.component';
+import { OrderRequestsComponent } from './order-requests/order-requests.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CourierSignupComponent } from './courier-signup/courier-signup.componen
     CourierOverviewComponent,
     AccountComponent,
     EnterOrderComponent,
-    CourierSignupComponent
+    CourierSignupComponent,
+    OrderRequestsComponent
   ],
   imports: [
     BrowserModule,

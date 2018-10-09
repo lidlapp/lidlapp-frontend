@@ -1,6 +1,6 @@
 {
     "/api": {
-      "target": "http://localhost:9090",
+      "target": "http://145.93.93.46:9090",
       "secure": false,
       "logLevel": "info",
       "changeOrigin": true

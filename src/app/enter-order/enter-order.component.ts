@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { notImplemented } from '@angular/core/src/render3/util';
+import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-enter-order',
@@ -11,7 +13,7 @@ export class EnterOrderComponent implements OnInit {
   products: string[] = [];
   productName: string;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit() {
   }
@@ -25,6 +27,11 @@ export class EnterOrderComponent implements OnInit {
   }
 
   placeOrder() {
-
+    const id = +this.route.snapshot.paramMap.get('id');
+    const order = {
+      products: this.products,
+      courierId: id,
+    };
+    this.http.post('/order', order).subscribe();
   }
 }
