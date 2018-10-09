@@ -34,10 +34,10 @@ describe('AccountComponent', () => {
   });
 
   it('display account details', inject([HttpTestingController], (httpMock: HttpTestingController) => {
+    fixture.autoDetectChanges();
     const req = httpMock.expectOne('/account');
     expect(req.request.method).toEqual('GET');
     req.flush({ data: accountMock });
-    fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('input[name=email]').value).toContain(accountMock.email);
   }));

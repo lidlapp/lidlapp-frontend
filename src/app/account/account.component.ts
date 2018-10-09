@@ -17,7 +17,9 @@ export class AccountComponent implements OnInit {
   ngOnInit() {
     this.http.get<Account>('/account').pipe(
       retry(3),
-    ).subscribe(a => this.model = a);
+    ).subscribe(a => {
+      this.model = a;
+    });
   }
 
   onSubmit() {
