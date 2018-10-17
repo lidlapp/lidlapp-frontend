@@ -1,6 +1,10 @@
 import { Product } from './Product';
 import { Account } from './Account';
 export class OrderItem {
-    product: Product;
-    consumer: Account;
+  id: number;
+  product: string;
+  consumerId: string;
+  accepted: boolean;
+  actualPrice: number;
+  outOfStock: boolean;
 }

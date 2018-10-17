@@ -14,13 +14,25 @@
         ETA
       </th>
     </tr>
-    <tr *ngFor="let courier of couriers | async">
-      <td>{{ courier.nickname }}</td>
-      <td>{{ courier.pickUpLocation }}</td>
-      <td>{{ courier.store }}</td>
-      <td>{{ courier.eta | date:'shortTime' }}</td>
-      <td><button (click)="chooseCourier(courier)">Choose courier</button></td>
-    </tr>
+
+    <ng-container *ngFor="let courier of couriers | async">
+      <tr>
+        <td>{{ courier.nickname }}</td>
+        <td>{{ courier.pickUpLocation }}</td>
+        <td>{{ courier.store }}</td>
+        <td>{{ courier.eta | date:'shortTime' }}</td>
+        <td><button (click)="chooseCourier(courier)">Choose courier</button></td>
+      </tr>
+      <tr>
+        <td colspan="5">
+          <ul *ngFor="let order of courier.orderItems">
+            <li>
+              {{ order.product }}
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </ng-container>
   </table>
 </div>
 <div>
