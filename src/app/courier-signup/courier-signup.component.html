@@ -1,0 +1,21 @@
+<form (ngSubmit)="signupCourier()">
+  <div>
+    <label>
+      Estimated time of arival:
+      <input type="time" name="ETA" [(ngModel)] = "courier.eta">
+    </label>
+  </div>
+  <div>
+    <label>
+      Pick up location:
+     <input type="text" name="Pick up location" [(ngModel)] = "courier.pickUpLocation">
+    </label>
+  </div>
+  <div>
+    <label>
+      Store:
+      <input type="text" name="Store" [(ngModel)] = "courier.store">
+    </label>
+  </div>
+  <button type="submit">Sing up as a courier!</button>
+</form>

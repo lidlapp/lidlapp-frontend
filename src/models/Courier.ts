@@ -1,8 +1,10 @@
-import { Store } from "./Store";
+import { Store } from './Store';
+import { OrderItem } from './OrderItem';
 export class Courier {
     id: number;
     nickname: string;
-    eta: Date;
-    storeId: number;
+    eta: string;
+    store: Store;
     pickUpLocation: string;
+    orderItems: OrderItem[];
 }

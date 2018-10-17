@@ -1,0 +1,15 @@
+<form (ngSubmit)="addProduct()">
+  <input type="text" name="Product name" [(ngModel)] = "productName">
+  <button type="submit">Add product</button>
+</form>
+<div>
+  <ul *ngFor="let productName of products; index as index">
+    <li>
+      {{ productName }}
+      <button (click)="removeProduct(index)">Remove product</button>
+    </li>
+  </ul>
+</div>
+<div style="margin-top: 30dp">
+    <button (click)="placeOrder()">Place order</button>
+</div>
