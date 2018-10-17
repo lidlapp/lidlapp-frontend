@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { notImplemented } from '@angular/core/src/render3/util';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -13,25 +13,31 @@ export class EnterOrderComponent implements OnInit {
   products: string[] = [];
   productName: string;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
   }
 
   addProduct() {
     this.products.push(this.productName);
+    this.productName = null;
   }
 
   removeProduct(index: number) {
     this.products.splice(index, 1);
   }
 
-  placeOrder() {
+  async placeOrder() {
     const id = +this.route.snapshot.paramMap.get('id');
     const order = {
       products: this.products,
       courierId: id,
     };
-    this.http.post('/order', order).subscribe();
+    await this.http.post('/order', order).toPromise();
+    this.router.navigate(['/dashboard']);
   }
 }
