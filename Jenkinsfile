@@ -3,11 +3,6 @@ pipeline {
     dockerfile true
   }
   stages {
-    stage('NPM install') {
-      steps {
-        sh 'npm install'
-      }
-    }
     stage('Build') {
       steps {
         sh 'npm run build'
