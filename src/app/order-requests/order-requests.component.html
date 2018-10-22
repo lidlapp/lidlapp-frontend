@@ -1,4 +1,7 @@
-<table>
+<div *ngFor="let courier of couriers | async">
+  <h1>Your orders as courier to {{ courier.store }}</h1>
+  <p>ETA: {{ courier.eta | date:'hh:mm' }}</p>
+  <table>
     <tr>
       <th>
         Consumer
@@ -7,8 +10,9 @@
         Producten
       </th>
     </tr>
-    <tr *ngFor="let orderItem of orderItems | async">
+    <tr *ngFor="let orderItem of courier.orderItems">
       <td>{{ orderItem.consumer.email }}</td>
       <td>{{ orderItem.product }}</td>
     </tr>
   </table>
+</div>

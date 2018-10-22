@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Courier } from 'src/models/Courier';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-courier-signup',
@@ -11,12 +12,15 @@ export class CourierSignupComponent implements OnInit {
 
   courier = new Courier();
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
   }
 
-  signupCourier() {
+  async signupCourier() {
     const courier = this.courier;
     this.courier = new Courier();
     const [h, m] = courier.eta.split(':');
@@ -24,6 +28,7 @@ export class CourierSignupComponent implements OnInit {
     today.setHours(+h, +m);
     courier.eta = today.toJSON();
     console.log(courier);
-    this.http.post('/courier', courier).subscribe();
+    await this.http.post('/courier', courier).toPromise();
+    this.router.navigate(['dashboard']);
   }
 }

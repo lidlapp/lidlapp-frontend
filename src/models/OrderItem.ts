@@ -7,4 +7,5 @@ export class OrderItem {
   accepted: boolean;
   actualPrice: number;
   outOfStock: boolean;
+  consumer: Account;
 }
